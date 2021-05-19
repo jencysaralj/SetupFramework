@@ -54,7 +54,7 @@ public class LoginTest {
         clickLogin.click();
         String success_message = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]")).getText();
         Assert.assertEquals(success_message,"Logged in successfully");
-        driver.close);
+        driver.quit();
     }
     @Test
     public void invalidUserLoginMessage(){
@@ -73,7 +73,7 @@ public class LoginTest {
         clickLogin.click();
         String invalidUserLoginMessage = driver.findElement(By.cssSelector("#content > div.alert.alert-error")).getText();
         Assert.assertEquals(invalidUserLoginMessage,"Invalid email or password.");
-        driver.close();
+        driver.quit();
     }
     @Test
     public void logoutSuccessfulMessage(){
@@ -100,6 +100,6 @@ public class LoginTest {
         logout_icon.click();
         String invalidUserLoginMessage = driver.findElement(By.cssSelector("#content > div.alert.alert-notice")).getText();
         Assert.assertEquals(invalidUserLoginMessage,"Signed out successfully.");
-        driver.close();
+        driver.quit();
     }
 }
